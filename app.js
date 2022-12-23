@@ -12,13 +12,31 @@ const fetchProduct = async () => {
     productDOM.innerHTML = `<p class="error">there was an error</p>`;
   }
 };
-fetchProduct();
 
 const displayProduct = (list) => {
-  console.log(list);
+  const productsList = list
+    .map((product) => {
+      const {
+        id,
+        fields: { price, name: title },
+      } = product;
+      const { url: image } = product.fields.image[0];
+      console.log(id, price, title);
+
+      return `<a class="single-product" href="product.html?id=${id}">
+    <img src="${image}" class="single-product-img" alt="${title}" />
+    <footer>
+      <h5 class="name">${title}</h5>
+      <span class="price">$${price / 100}</span>
+    </footer>
+  </a>`;
+    })
+    .join("");
+  productDOM.innerHTML = `<div class="products-container">${productsList}</div>`;
 };
 
 const start = async () => {
   const data = await fetchProduct();
   displayProduct(data);
 };
+start();
