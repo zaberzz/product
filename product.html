@@ -5,9 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>single product</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
+  - link styles.css - a.btn.home-link(back home) - section.product -
+  div.product-wrapper - img.img - div.product-info - h3 (title) - h5 (company) -
+  span (price) - div.colors - span.product-color - p (lorem text) -
+  button.btn(add to cart)
   <body>
     <h1>single product</h1>
-    <a href="index.html">Home page</a>
+    <a href="index.html" class="btn home-link">back home</a>
+    <section class="product">
+      <div class="product-wrapper">
+        <img src="couch.jpg" class="img" alt="" />
+        <div class="product-info">
+          <h3>title</h3>
+          <h5>company</h5>
+          <span>$9.999</span>
+          <div class="colors">
+            <span class="product-color"></span>
+            <span class="product-color" style="background-color: red"></span>
+          </div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Perferendis eaque voluptatum possimus ducimus, ipsa quia nostrum
+            odio cupiditate rem amet inventore incidunt corporis maiores,
+            mollitia provident hic sunt nihil voluptate?
+          </p>
+          <button class="btn">add to cart</button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
